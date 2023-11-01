@@ -17,6 +17,6 @@ public class UserOrderController {
     @PostMapping("/order")
     public ResponseEntity<String> publish(@RequestBody UserOrder userOrder){
         userOrderService.sendOrder(userOrder);
-        return ResponseEntity.ok("User Order sent to Kafka");
+        return ResponseEntity.ok("User Order sent");
     }
 }

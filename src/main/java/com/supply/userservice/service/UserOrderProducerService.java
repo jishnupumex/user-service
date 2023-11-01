@@ -26,7 +26,7 @@ public class UserOrderProducerService {
 
     public void sendOrder(UserOrder data){
 
-        LOGGER.info(String.format("Message sent -> %s", data.toString()));
+        LOGGER.info(String.format("Order sent -> %s", data.toString()));
 
         Message<UserOrder> message = MessageBuilder
                 .withPayload(data)

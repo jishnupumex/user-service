@@ -12,10 +12,18 @@ public class Config {
     @Value("UserOrder")
     private String topicJsonName;
 
-
     @Bean
     public NewTopic JsonTopic(){
         return TopicBuilder.name(topicJsonName)
+                .build();
+    }
+
+    @Value("${spring.kafka.topic.order-update-name}")
+    private String topicOrderUpdateName;
+
+    @Bean
+    public NewTopic OrderUpdateTopic() {
+        return TopicBuilder.name(topicOrderUpdateName)
                 .build();
     }
 }
