@@ -31,6 +31,7 @@ public class UserOrderProducerService {
         Message<UserOrder> message = MessageBuilder
                 .withPayload(data)
                 .setHeader(KafkaHeaders.TOPIC, topicJsonName)
+                .setHeader(KafkaHeaders.PARTITION, 1)
                 .build();
 
         kafkaTemplate.send(message);
